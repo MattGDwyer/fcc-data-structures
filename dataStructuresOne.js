@@ -519,13 +519,8 @@ class Set {
   }
   // Only change code below this line
   isSubsetOf(set) {
-
     let intersectionSet = this.intersection(set);
-    if (intersectionSet.size() !== this.size()) {
-      return false;
-    } else {
-      return true;
-    }
+    return intersectionSet.size() !== this.size() ? false : true;
   }
   // Only change code above this line
 }
