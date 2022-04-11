@@ -556,3 +556,28 @@ Remove the values 2 and 5, and then return the set.
   // Only change code above this line
   return set;
 }
+
+/**
+ * 14.In this exercise we will pass an array and a value to the checkSet() function. Your function should create an ES6 set from the array argument. Find if the set contains the value argument. Find the size of the set. And return those two values in an array.
+ */
+
+ function checkSet(arrToBeSet, checkValue){
+
+  // Only change code below this line
+  let set = new Set(arrToBeSet);
+  return [set.has(checkValue), set.size];
+  // Only change code above this line
+
+}
+
+/**
+ * 15. In this exercise we will pass a set object to the checkSet function. It should return an array containing the values of the Set.
+
+Now you've successfully learned how to use the ES6 Set() object, good job!
+ */
+
+function checkSet(set){
+  // Only change code below this line
+  return [...set];
+  // Only change code above this line
+}
