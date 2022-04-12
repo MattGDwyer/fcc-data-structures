@@ -581,3 +581,86 @@ function checkSet(set){
   return [...set];
   // Only change code above this line
 }
+
+/**
+ * 16.var Map = function() {
+  this.collection = {};
+  // Only change code below this line
+  this.add = (key, value) => {
+    this.collection[key] = value;
+  }
+  this.remove = (key) => {
+    delete this.collection[key];
+  }
+  this.get = (key) => {
+    return this.collection[key];
+  }
+  this.has = (key) => {
+    return this.collection[key] ? true : false;
+  }
+  this.values = () => {
+    let values = [];
+    console.log(values);
+    for (let key in this.collection) {
+      values.push(this.collection[key]);
+    }
+    return values;
+  }
+  this.clear = () => {
+    this.collection = {};
+  }
+  this.size = (key, value) => {
+    let size = 0;
+    for (let key in this.collection) {
+      size++;
+    }
+    return size;
+  }
+  // Only change code above this line
+};
+ */
+
+ var Map = function() {
+  this.collection = {};
+  // Only change code below this line
+  this.add = (key, value) => {
+    this.collection[key] = value;
+  }
+  this.remove = (key) => {
+    delete this.collection[key];
+  }
+  this.get = (key) => {
+    return this.collection[key];
+  }
+  this.has = (key) => {
+    return this.collection[key] ? true : false;
+  }
+  this.values = () => {
+    let values = [];
+    console.log(values);
+    for (let key in this.collection) {
+      values.push(this.collection[key]);
+    }
+    return values;
+  }
+  this.clear = () => {
+    this.collection = {};
+  }
+  this.size = (key, value) => {
+    let size = 0;
+    for (let key in this.collection) {
+      size++;
+    }
+    return size;
+  }
+  // Only change code above this line
+};
+
+/**
+ * 17. Define a JavaScript Map object and assign to it a variable called myMap. Add the key, value pair freeCodeCamp, Awesome! to it.
+
+ */
+
+ let myMap = new Map()
+
+ myMap.set('freeCodeCamp', 'Awesome!');
