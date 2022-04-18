@@ -664,3 +664,71 @@ function checkSet(set){
  let myMap = new Map()
 
  myMap.set('freeCodeCamp', 'Awesome!');
+
+
+//  18. Let's create the basic functionality of a hash table. We've created a naive hashing function for you to use. You can pass a string value to the function hash and it will return a hashed value you can use as a key for storage. Store items based on this hashed value in the this.collection object. Create these three methods: add, remove, and lookup. The first should accept a key value pair to add to the hash table. The second should remove a key-value pair when passed a key. The third should accept a key and return the associated value or null if the key is not present.
+
+Be sure to write your code to account for collisions!
+
+Note: The remove method tests won't pass until the add and lookup methods are correctly implemented.
+
+var called = 0;
+var hash = string => {
+  called++;
+  var hashed = 0;
+  for (var i = 0; i < string.length; i++) {
+    hashed += string.charCodeAt(i);
+  }
+  return hashed;
+};
+var HashTable = function() {
+  this.collection = {};
+  // Only change code below this line
+  this.add = (key, value) => {
+    let hashed = hash(key);
+    let hasProp = false;
+
+    if (!this.collection[hashed]) {
+      this.collection[hashed] = [{[key]: value}];
+    } else {
+      for (let i = 0; i < this.collection[hashed].length; i++) {
+        if (this.collection[hashed][i][key]) {
+          hasProp = true;
+          this.collection[hashed][i][key] = value;
+        }
+      }
+       if(!hasProp) {
+       this.collection[hashed].push({[key]: value});
+      }
+    }
+    return this.collection[hashed];
+  }
+
+    this.remove = (key) => {
+      let hashed = hash(key);
+      if (this.collection[hashed]) {
+        for (let i=0; i < this.collection[hashed].length; i++) {
+          if (this.collection[hashed][i][key]) {
+            this.collection[hashed].splice(i, 1);
+          }
+        }
+        if (this.collection[hashed].length === 0) {
+          delete this.collection[hashed];
+        }
+      }
+    }
+
+    this.lookup = (key) => {
+      let hashed = hash(key);
+    if (this.collection[hashed]) {
+      for (let i = 0; i < this.collection[hashed].length; i++) {
+        if (this.collection[hashed][i][key]) {
+          return this.collection[hashed][i][key];
+        }
+      }
+    } else {
+      return null;
+    }
+  }
+  // Only change code above this line
+};
