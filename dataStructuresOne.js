@@ -732,3 +732,22 @@ var HashTable = function() {
   }
   // Only change code above this line
 };
+
+// 19. In our code editor, we've created two nodes, Kitten and Puppy, and we've manually connected the Kitten node to the Puppy node.
+
+// Create a Cat and Dog node and manually add them to the line.
+
+var Node = function(element) {
+  this.element = element;
+  this.next = null;
+};
+var Kitten = new Node('Kitten');
+var Puppy = new Node('Puppy');
+
+Kitten.next = Puppy;
+// Only change code below this line
+let Cat = new Node('Cat');
+let Dog = new Node('Dog');
+
+Puppy.next = Cat;
+Cat.next = Dog;
