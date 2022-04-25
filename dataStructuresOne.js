@@ -847,7 +847,6 @@ function LinkedList() {
 
         if (currentNode.element === node.element) {
           let newLink = currentNode.next;
-          console.log(previousNode.next);
           previousNode.next = newLink;
         }
       }
